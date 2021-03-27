@@ -1,0 +1,2 @@
+docker run -v /Users/bensonlin/Project/Interview/Tesla/KafkaWithAPI:/temp -it 79142a55d8ee /bin/bash
+

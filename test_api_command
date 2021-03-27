@@ -1,0 +1,1 @@
+curl self.test.com:8192/api/action/check

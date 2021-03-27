@@ -1,0 +1,28 @@
+language: php
+
+php:
+  - 5.5
+  - 5.6
+  - 7 
+
+matrix:
+  allow_failures:
+    - php: 5.5
+    - php: 5.6
+
+before_install:
+
+install:
+      - travis_retry composer install --no-interaction --ignore-platform-reqs
+
+script:
+    - mkdir -p build/logs
+    - mkdir -p build/coverage
+    - ./tests/run-tests.php -c ../build/logs/clover. all
+
+after_script:
+    - php vendor/bin/coveralls  -v
+
+notifications:
+  email:
+      - swansoft_team@groups.163.com
